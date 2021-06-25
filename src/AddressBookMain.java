@@ -4,6 +4,7 @@ import java.util.*;
      public static Scanner sc = new Scanner(System.in);
      private static AddressBook addressBook = new AddressBook();
      public Map<String, AddressBook> addressBookListMap = new HashMap<>();
+     private String addressBookName;
 
      public void addAddressBook(String bookName) {
 
@@ -53,11 +54,14 @@ import java.util.*;
                      }
                      break;
 
+
                  case 4:
                      flag = false;
                      break;
-
              }
+
+             addressBookListMap.put(addressBookName, addressBook);
+             System.out.println("Address Book Added Successfully");
          }
      }
 
@@ -67,7 +71,8 @@ import java.util.*;
          boolean flag = true;
          while (flag) {
              System.out.println("1.Add New Address Book");
-             System.out.println("2.Exit");
+             System.out.println("2.Find Duplicate Entry in Address Book");
+             System.out.println("3.Exit");
              System.out.println("Enter choice: ");
              int option = sc.nextInt();
              switch (option) {
@@ -82,12 +87,18 @@ import java.util.*;
                          break;
                      }
                  }
-                 case 2: {
+                 case 2:
+                     for (Map.Entry<String, AddressBook> entry : addressBookMain.addressBookListMap.entrySet()) {
+                         AddressBook value = entry.getValue();
+                         System.out.println("Address Book Name: " + entry.getKey());
+                         value.checkDuplicate();
+                     }
+                 case 3:
                      flag = false;
                      break;
-                 }
              }
          }
      }
  }
+
 
