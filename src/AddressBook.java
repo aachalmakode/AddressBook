@@ -23,7 +23,6 @@ public class AddressBook {
         String zip = sc.next();
         ContactDetails contactDetails = new ContactDetails(firstName, lastName, address, city, state, email, phoneNumber, zip);
         contactList.add(contactDetails);
-
     }
 
     public boolean editContactDetails(String Name)
@@ -135,6 +134,8 @@ public class AddressBook {
     }
 
 }
+
+
 
 
 

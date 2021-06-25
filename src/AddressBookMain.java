@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class AddressBookMain {
+ class AddressBookMain {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to Address Book Program");
+        System.out.println("Welcome to the Address Book System");
 
         AddressBook addressBook = new AddressBook();
         boolean flag = true;
@@ -23,19 +23,23 @@ public class AddressBookMain {
             switch (option) {
                 case 1:
                     addressBook.addContactDetails();
-                    break;
+                    int noOfContacts = sc.nextInt();
+                    for(int i = 0; i < noOfContacts; i++) {
+                        addressBook.addContactDetails();
+                    }
+                    break;    
 
                 case 2:
                     System.out.println("Enter the Person First name to edit details: ");
-                    String person_name = sc.next();
-
-                    boolean b = addressBook.editContactDetails(person_name);
-                    if (b == true) {
-                        System.out.println("Details Updated");
-                    } else {
-                        System.out.println("Contact Not Found");
+                    String personName = sc.next();
+                    boolean listEdited = addressBook.editContactDetails(personName);
+                    if (listEdited) {
+                        System.out.println("List Edited Successfully");
+                    } else
+                    {
+                        System.out.println("List Cannot be Edited");
                     }
-                    break;
+                    break ;
 
                 case 3:
                     System.out.println("Enter the Contact to be deleted:");
