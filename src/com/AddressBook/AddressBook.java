@@ -1,5 +1,9 @@
+<<<<<<< HEAD:src/AddressBook.java
 import java.util.ArrayList;
 import java.util.Scanner;
+=======
+package com.AddressBook;
+>>>>>>> 766fe33eed6d1c33edf9df464d503979ef3ccec8:src/com/AddressBook/AddressBook.java
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -62,6 +66,7 @@ public class AddressBook {
             {
 
                 System.out.println("Select an option to edit\n"
+<<<<<<< HEAD:src/AddressBook.java
                         +"1 First Name\n"
                         +"2 Last Name\n"
                         +"3 Address\n"
@@ -70,6 +75,16 @@ public class AddressBook {
                         +"6 Email"
                         +"7 phone Number\n"
                         +"8 ZIP code\n");
+=======
+                        +"1] First Name\n"
+                        +"2] Last Name\n"
+                        +"3] Address\n"
+                        +"4] City\n"
+                        +"5] State\n"
+                        +"6] Email"
+                        +"7] phone Number\n"
+                        +"8] ZIP code\n");
+>>>>>>> 766fe33eed6d1c33edf9df464d503979ef3ccec8:src/com/AddressBook/AddressBook.java
 
                 int choice = sc.nextInt();
                 switch(choice)
@@ -161,10 +176,17 @@ public class AddressBook {
             return false;
     }
     //	Display Address Book
+<<<<<<< HEAD:src/AddressBook.java
     public boolean DisplayAddressBook()
     {
         int flag = 0;
         if(flag == 0) {
+=======
+    public boolean DisplayAddressBook(String Name)
+    {
+        int flag = 0;
+        for (int i = 0; i < contactList.size(); i++) {
+>>>>>>> 766fe33eed6d1c33edf9df464d503979ef3ccec8:src/com/AddressBook/AddressBook.java
             System.out.println(contactList);
             flag = 1;
         }
